@@ -1,0 +1,18 @@
+enable
+conf t
+vlan create 10 name Footbal type port
+vlan create 20 name Rugby type port
+vlan create 30 name Natation type port
+vlan create 8 name M2L type port
+vlan configcontrol automatic
+vlan members add 10 1-12
+vlan members add 20 13-24
+vlan members add 30 25-36
+vlan members add 8 37-49
+vlan ports 50 tagging tagALL
+vlan members add 8 50
+vlan members add 10 50
+vlan members add 20 50
+vlan members add 30 50
+vlan members remove 1 50
+show vlan
